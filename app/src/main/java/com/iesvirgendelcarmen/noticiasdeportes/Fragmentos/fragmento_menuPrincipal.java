@@ -25,8 +25,7 @@ public class fragmento_menuPrincipal extends Fragment {
     private DesplegableAdapter spinnerAdapter;
 
     Spinner spinner;
-    Button botonCargar;
-    Fragment fragmento;
+    Button botonCargar, botonAbrirFavoritos;
 
     ListView lista;
 
@@ -57,6 +56,15 @@ public class fragmento_menuPrincipal extends Fragment {
             }
         });
 
+        botonAbrirFavoritos = view.findViewById(R.id.btn_abrirFavoritos);
+        botonAbrirFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmento_Favoritos fragmento = new fragmento_Favoritos();
+                abrirFavoritos(fragmento);
+            }
+        });
+
 
     }
 
@@ -69,6 +77,13 @@ public class fragmento_menuPrincipal extends Fragment {
         ft.replace(R.id.fragmento, fragment).addToBackStack(null);
         ft.commit();
 
+    }
+
+    public void abrirFavoritos(fragmento_Favoritos fragment) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragmento, fragment).addToBackStack(null);
+        ft.commit();
     }
 
     private void initList() {

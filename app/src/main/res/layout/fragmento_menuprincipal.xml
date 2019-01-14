@@ -54,34 +54,34 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Seleccione un proovedor" />
 
-    <TextView
-        android:id="@+id/favoritosTexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Noticias guardadas"
-        android:textAllCaps="true"
-        app:layout_constraintBottom_toBottomOf="@+id/estrellaFavoritos"
-        app:layout_constraintStart_toEndOf="@+id/estrellaFavoritos"
-        app:layout_constraintTop_toTopOf="@+id/estrellaFavoritos"
-        tools:text="Noticias guardadas" />
-
     <Button
         android:id="@+id/btn_cargarNoticias"
-        android:stateListAnimator="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="32dp"
         android:elevation="0dp"
+        android:stateListAnimator="@null"
         android:text="Cargar noticias"
         android:textAllCaps="true"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/favoritosTexto"
+        app:layout_constraintBottom_toTopOf="@+id/btn_abrirFavoritos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Cargar noticias" />
+
+    <Button
+        android:id="@+id/btn_abrirFavoritos"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="NOTICIAS GUARDADAS"
+        app:layout_constraintBottom_toBottomOf="@+id/estrellaFavoritos"
+        app:layout_constraintStart_toEndOf="@+id/estrellaFavoritos"
+        app:layout_constraintTop_toTopOf="@+id/estrellaFavoritos"
+        tools:text="NOTICIAS GUARDADAS" />
 
 </android.support.constraint.ConstraintLayout>

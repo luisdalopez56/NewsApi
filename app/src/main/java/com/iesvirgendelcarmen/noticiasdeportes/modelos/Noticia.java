@@ -1,5 +1,7 @@
 package com.iesvirgendelcarmen.noticiasdeportes.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
@@ -10,12 +12,27 @@ import java.util.Locale;
  */
 
 public class Noticia implements Serializable {
+
+    @SerializedName("author")
     private String author;
+
+    @SerializedName("title")
     private String title;
+
+    @SerializedName("description")
     private String description;
+
+    @SerializedName("url")
     private String url;
+
+    @SerializedName("urlToImage")
     private String urlToImage;
+
+    @SerializedName("publishedAt")
     private Date publishedAt;
+
+    @SerializedName("id")
+    private String id;
 
     public Noticia(String author, String title, String description, String url, String urlToImage, Date publishedAt) {
         this.author = author;
@@ -24,6 +41,14 @@ public class Noticia implements Serializable {
         this.url = url;
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getAuthor() {

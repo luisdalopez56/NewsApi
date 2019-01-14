@@ -3,6 +3,7 @@ package com.iesvirgendelcarmen.noticiasdeportes.Fragmentos;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,13 +15,17 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasContract;
+import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasFavRetrofit;
 import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasPresenter;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasAdapter;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasRepositorio;
 import com.tema1.luisdalopez56.proyectonoticias.R;
+
 import java.util.List;
+
 import butterknife.ButterKnife;
+import retrofit2.Callback;
 
 public class fragmento_ListaNoticias extends Fragment implements NoticiasContract.Vista {
 
@@ -29,6 +34,7 @@ public class fragmento_ListaNoticias extends Fragment implements NoticiasContrac
     ListView listViewNoticias;
 
     private NoticiasContract.Presentador presenter;
+    Callback callback;
 
     private List<Noticia> listaNoticias;
     private NoticiasAdapter noticiasAdapter;
@@ -41,6 +47,13 @@ public class fragmento_ListaNoticias extends Fragment implements NoticiasContrac
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Callback)
+            this.callback = (Callback) context;
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(view);
@@ -50,12 +63,36 @@ public class fragmento_ListaNoticias extends Fragment implements NoticiasContrac
             presenter.cargarNoticias(getContext());
         }
 
+
+
+
         setLayout();
+
     }
 
 
 
     private void setLayout() {
+
+        listViewNoticias.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(final AdapterView<?> adapterView, View arg1,
+                                           int i, long id) {
+
+                NoticiasFavRetrofit.getInstance().postNoticias(listaNoticias.get(i), new NoticiasFavRetrofit.CallbackNoticia() {
+                    @Override
+                    public void onPostNoticia() {
+                        Toast.makeText(adapterView.getContext(), "AÑADIDO A FAVORITOS", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNoticiaError(String mensajeError) {
+                        Toast.makeText(adapterView.getContext(), "ERROR: NO SE HA PODIDO AÑADIR A FAV", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                return true;
+            }
+        });
 
         //Evento click en item de la lista
         listViewNoticias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -73,6 +110,9 @@ public class fragmento_ListaNoticias extends Fragment implements NoticiasContrac
 
             }
         });
+
+
+
     }
 
 
@@ -91,5 +131,9 @@ public class fragmento_ListaNoticias extends Fragment implements NoticiasContrac
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Toast.makeText(getContext(), "Error al descargar noticias",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void mandarPOST(){
+
     }
 }

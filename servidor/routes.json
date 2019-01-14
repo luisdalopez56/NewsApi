@@ -1,0 +1,4 @@
+{
+  "/noticias/get/:id": "/noticias/:id",
+  "/noticias/delete/:id": "/noticias/:id"
+}
