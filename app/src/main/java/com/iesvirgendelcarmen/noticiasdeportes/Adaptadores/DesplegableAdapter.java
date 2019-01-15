@@ -1,4 +1,4 @@
-package com.iesvirgendelcarmen.noticiasdeportes.modelos;
+package com.iesvirgendelcarmen.noticiasdeportes.Adaptadores;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Proveedor;
 import com.tema1.luisdalopez56.proyectonoticias.R;
 
 import java.util.ArrayList;

@@ -12,21 +12,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.iesvirgendelcarmen.noticiasdeportes.Adaptadores.NoticiasAdapter;
 import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasFavRetrofit;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasAdapter;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.api.Callback;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.api.NewsApi;
 import com.tema1.luisdalopez56.proyectonoticias.R;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class fragmento_Favoritos extends android.app.Fragment {
 
-    @BindView(R.id.noticias)
     ListView listView;
 
     List<Noticia> listaNoticias;
@@ -50,7 +45,8 @@ public class fragmento_Favoritos extends android.app.Fragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this,view);
+
+        listView = view.findViewById(R.id.noticias);
 
         NoticiasFavRetrofit.getInstance().getNoticias(new NoticiasFavRetrofit.CallbackNoticias() {
             @Override
@@ -84,12 +80,10 @@ public class fragmento_Favoritos extends android.app.Fragment {
                 NoticiasFavRetrofit.getInstance().deleteNoticia(listaNoticias.get(position), new NoticiasFavRetrofit.CallbackDeleteNoticia() {
                     @Override
                     public void onDeleteNoticia() {
-
                     }
 
                     @Override
                     public void onDeleteNoticiaError() {
-
                     }
                 });
 

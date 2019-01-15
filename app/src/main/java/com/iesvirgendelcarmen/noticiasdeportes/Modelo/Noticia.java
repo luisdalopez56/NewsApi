@@ -1,4 +1,4 @@
-package com.iesvirgendelcarmen.noticiasdeportes.modelos;
+package com.iesvirgendelcarmen.noticiasdeportes.Modelo;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,6 +1,6 @@
 package com.iesvirgendelcarmen.noticiasdeportes.NoticiasDetalle;
 
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 
 public interface NoticiasDetalleContract {
 

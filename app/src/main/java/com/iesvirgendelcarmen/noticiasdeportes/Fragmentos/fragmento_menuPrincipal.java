@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.DesplegableAdapter;
+import com.iesvirgendelcarmen.noticiasdeportes.Adaptadores.DesplegableAdapter;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasRepositorio;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Proveedor;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Proveedor;
 import com.tema1.luisdalopez56.proyectonoticias.R;
 
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public class fragmento_menuPrincipal extends Fragment {
 
     }
 
-    public void abrirFavoritos(fragmento_Favoritos fragment) {
+    public void abrirFavoritos(Fragment fragment) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.fragmento, fragment).addToBackStack(null);

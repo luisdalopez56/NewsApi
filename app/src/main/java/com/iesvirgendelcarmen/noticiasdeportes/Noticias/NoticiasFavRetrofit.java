@@ -1,6 +1,6 @@
 package com.iesvirgendelcarmen.noticiasdeportes.Noticias;
 
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 
 import java.util.List;
 
@@ -52,6 +52,7 @@ public class NoticiasFavRetrofit {
             @Override
             public void onResponse(Call<List<Noticia>> call, Response<List<Noticia>> response) {
                 List<Noticia> listaNoticias = response.body();
+                System.out.println(listaNoticias);
                 callbackNoticias.onNoticias(listaNoticias);
             }
             @Override

@@ -2,6 +2,8 @@ package com.iesvirgendelcarmen.noticiasdeportes.modelos;
 
 import android.content.Context;
 
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Proveedor;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.api.NewsApi;
 
 import java.util.ArrayList;

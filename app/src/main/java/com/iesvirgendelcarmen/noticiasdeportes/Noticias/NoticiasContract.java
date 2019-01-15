@@ -2,7 +2,7 @@ package com.iesvirgendelcarmen.noticiasdeportes.Noticias;
 
 import android.content.Context;
 
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 
 import java.util.List;
 

@@ -1,12 +1,9 @@
 package com.iesvirgendelcarmen.noticiasdeportes.Noticias;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasAdapter;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasRepositorio;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.api.NewsApi;
 
 import java.util.List;
 

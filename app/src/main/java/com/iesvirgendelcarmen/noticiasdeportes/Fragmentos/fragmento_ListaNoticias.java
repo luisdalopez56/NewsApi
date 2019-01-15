@@ -14,11 +14,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.iesvirgendelcarmen.noticiasdeportes.Adaptadores.NoticiasAdapter;
 import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasContract;
 import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasFavRetrofit;
 import com.iesvirgendelcarmen.noticiasdeportes.Noticias.NoticiasPresenter;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.Noticia;
-import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasAdapter;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.NoticiasRepositorio;
 import com.tema1.luisdalopez56.proyectonoticias.R;
 

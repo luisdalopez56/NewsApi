@@ -1,4 +1,4 @@
-package com.iesvirgendelcarmen.noticiasdeportes.modelos;
+package com.iesvirgendelcarmen.noticiasdeportes.Adaptadores;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
+import com.iesvirgendelcarmen.noticiasdeportes.Modelo.Noticia;
 import com.iesvirgendelcarmen.noticiasdeportes.modelos.api.VolleySingleton;
 import com.tema1.luisdalopez56.proyectonoticias.R;
 
@@ -15,10 +16,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-/**
- * Created by luis on 9/12/17.
- */
 
 public class NoticiasAdapter extends BaseAdapter {
 
